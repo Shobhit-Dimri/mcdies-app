@@ -439,22 +439,27 @@ app.post('/webhook/', (req, res) => {
  					console.log('In action OrderConfirmed');
 					if(isDefined(actionName)){
  						console.log(cartId+'   '+cardId);
-						function myFunc() {
-							text= `Your order has been submitted.I will text it to you for reference.Please provide this code to get your order started.Thank you for your order!`
+// 						function myFunc() {
+// 							text= `Your order has been submitted.I will text it to you for reference.Please provide this code to get your order started.Thank you for your order!`
+// 								 messageData = {
+// 										speech: text,
+// 										displayText: text
+// 										}
+// 								res.send(messageData);
+// 						};
+						qsr.placeOrderService(access_token, cartId, email, storeId, (error, orderResult) =>{
+							if(error){
+								console.log(error);
+							}else{
+								//console.log(orderResult.code);
+								orderCode=orderResult.code;
+								console.log('code---- ', orderCode);
+								text= `Your order has been submitted.I will text it to you for reference.Please provide this code to get your order started.Thank you for your order!`
 								 messageData = {
 										speech: text,
 										displayText: text
 										}
 								res.send(messageData);
-						};
-						qsr.placeOrderService(access_token, cartId, email, storeId, (error, orderResult) =>{
-							if(error){
-								console.log(error);
-							}else{
-								console.log(orderResult.code);
-								orderCode=orderResult.code;
-								console.log('code---- ', orderCode);
-								setTimeout(() => myFunc(), 5000);
 								//qsr.gettingOrbIdFromOrderService(storeId, orderResult.code, (error, orbIdResult) => {
 								//			if(error){
 								//				console.log(error);
