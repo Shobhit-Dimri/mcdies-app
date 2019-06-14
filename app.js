@@ -453,14 +453,16 @@ app.post('/webhook/', (req, res) => {
 							}else{
 								console.log(orderResult.code);
 								orderCode=orderResult.code;
-								qsr.gettingOrbIdFromOrderService(storeId, orderResult.code, (error, orbIdResult) => {
-											if(error){
-												console.log(error);
-											}else {
-												console.log(orbIdResult.displayCode);
-												setTimeout(() => myFunc(), 5000);
-											}
-									});
+								console.log('code---- ', orderCode);
+								setTimeout(() => myFunc(), 5000);
+								//qsr.gettingOrbIdFromOrderService(storeId, orderResult.code, (error, orbIdResult) => {
+								//			if(error){
+								//				console.log(error);
+								//			}else {
+								//				console.log(orbIdResult.displayCode);
+												//setTimeout(() => myFunc(), 5000);
+								//			}
+								//	});
 								}
 							});
 						}else{
