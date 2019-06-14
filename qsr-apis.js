@@ -43,7 +43,7 @@ var getGpsFromZipService = (zipcode, callback) =>{
   console.log(zipcode);
   console.log('getGpsFromZip API hit');
   request({
-    url: `https://maps.googleapis.com/maps/api/geocode/json?address=${zipcode}&key=AIzaSyBvrztXIMHaa-fWqtaXrpvyQ66nEH6ulzo`,
+    url: `https://maps.googleapis.com/maps/api/geocode/json?address=${zipcode}&key=AIzaSyBF3WrS4r3VDhOwFGO2MhTik2Z2h2it23A`,
     method: 'GET',
     rejectUnauthorized: false,
     json: true
