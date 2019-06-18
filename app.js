@@ -454,17 +454,17 @@ app.post('/webhook/', (req, res) => {
 								//console.log(orderResult.code);
 								orderCode=orderResult.code;
 								console.log('code---- ', orderCode);
+								text= `Your order has been submitted.I will text it to you for reference.Please provide this code to get your order started.Thank you for your order!`
+								 messageData = {
+										speech: text,
+										displayText: text
+										}
+								res.send(messageData);
 								qsr.gettingOrbIdFromOrderService(storeId, orderResult.code, (error, orbIdResult) => {
 											if(error){
 												console.log(error);
 											}else {
 												console.log(orbIdResult.displayCode);
-												text= `Your order has been submitted.I will text it to you for reference.Please provide this code to get your order started.Thank you for your order!`
-												 messageData = {
-														speech: text,
-														displayText: text
-														}
-												res.send(messageData);
 												//setTimeout(() => myFunc(), 5000);
 											}
 									});
