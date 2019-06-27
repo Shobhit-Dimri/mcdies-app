@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/Shobhit-Dimri/mcdies-app.git"
   },
   "author": "Shobhit Dimri",
   "license": "ISC",
@@ -29,5 +29,9 @@
   "keywords": [
     "Mcdonald",
     "poc"
-  ]
+  ],
+  "bugs": {
+    "url": "https://github.com/Shobhit-Dimri/mcdies-app/issues"
+  },
+  "homepage": "https://github.com/Shobhit-Dimri/mcdies-app#readme"
 }
